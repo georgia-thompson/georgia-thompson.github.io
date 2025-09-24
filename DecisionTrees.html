@@ -1,0 +1,263 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Decision Trees - Texas Schools</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="generic.html">About Me</a></li>
+							<li><a href="projects.html">Projects</a></li>
+							<li><a href="generic.html">Methods</a></li>
+							<li><a href="elements.html">What I can do</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+    						<div class="page_intros">
+							<img src="images/decisiontree.png" /><h1>Texas-Sized Decisions</h1>
+							</div>
+							
+							<div class="projects_desc">
+    							<p>Every business wants to know what factors contribute to success. 
+    							Here in Texas, we know that a well-performing school system leads to an effective 
+    							workforce - which is in everyone's best interest. Businesses know that 
+    							<b>data is power</b>, and using data, we can answer the question:
+    							<span style="font-style:italic;">'how can we identify 
+    							the drivers of effective performance'?</span> A decision tree can 
+    							help stakeholders visualize data and business outcomes in an understandable 
+    							way. In this project, I explore how <span style="text-weight:bold;">decision trees</span> 
+    							can be used as a business intelligence tool.  </p> 
+    							
+    							<!--Explain the context of the school SAT problem in business language -->
+                            	<p>Texas has a vested interest in preparing students for a successful 
+                            	path to college. Students' SAT scores are predictive of college performance, 
+                            	including grades and retention. For this project, I use decision trees to determine 
+                            	which factors contribute to a school's average SAT scores. 
+                            	The factors that were considered had to do with a school district's 
+                            	economic health, their SAT participation rate, and the school's 
+                            	<a href="https://tea.texas.gov/reports-and-data/school-data/district-type-data-search/district-type-glossary-of-terms-2022-23#ncesdist">NCES district type</a>. </p>
+                            
+                            </div>
+                            							
+
+							<div>
+							<!-- add visuals and descriptives here -->
+							<p>I computed decision trees for years 2014 to 2023, considering 
+							each school's performance based on a running four year score. Originally, schools were 
+							rated "Poor", "Acceptable" or "Good" depending on which quartile their 
+							four year score fell for each year. The decision tree attempts to predict which factors 
+							will result in a higher probability of one of these outcomes. The boxes colored 
+							<span style="color:purple;"><b>purple</b></span> were rated 
+							"<span style='color:purple;'><b>good</b></span>", 
+							<span style="color:green;"><b>green</b></span> were rated 
+							"<span style="color:green;"><b>acceptable</b></span>", 
+							and <span style="color;brown;"><b>brown</b></span> were rated 
+							"<span style="color;brown;"><b>poor</b></span>". The features are described 
+							in more detail in the <a href="glossary.html#TexasEd">glossary</a>. 
+							</p>
+							
+							<p>See the notebook <a href="#">here</a> to get a closer look at the decision trees 
+							and dig deeper into the methods I used.</p>
+							
+							<section>
+            					<h3>What the data conveyed</h3>
+            					
+            					<p>
+                                Splitting the data on features across three different outcomes proved ineffective. 
+                                The highest accuracy rate reached 55%, while in most years it fell below 50%. 
+                                Also, for most years, it took several levels of drilling down into the data to achieve 
+                                acceptable purity, with most of the trees appearing largely brown, indicating that 
+                                each branch continued to produce poor outcomes. In summary, I found that, for the 
+                                most part, the decision trees failed to ensure a confident story for the data and 
+                                were not helpful in providing additional insights into which features produced better 
+                                outcomes. </p>
+                                
+    					<div class="box alt">
+    						<div class="row gtr-uniform">
+    							<div class="col-6"><span class="image fit">
+    							<figure>
+        							<img src="images/2017_dt.png" alt="2017 with 42% accuracy" />
+        						<figcaption style="text-align:center;">2017 with 42% accuracy</figcaption>
+        						</figure>	
+        							</span>
+        						</div>
+    							<div class="col-6"><span class="image fit">
+    							<figure>
+        							<img src="images/2022_dt.png" alt="2022 with 50% accuracy" />
+        						<figcaption style="text-align:center;">2022 with 50% accuracy</figcaption>
+        						</figure>	
+        							</span>
+        						</div>
+    						</div>
+    					</div>
+    					
+    					<p>Since the decision trees were mostly full of poor outcomes, analyzing the data 
+    					led to the question: Which features could improve SAT performance enough to move 
+    					it out of a poor rating?” This rephrasing of the question led to a more interesting 
+    					story for the data. For instance, the year 2017 shows that the top split would produce a 
+    					30% chance for performing better than poor to the left and a 60% chance to the 
+    					right. Overall, the data is more comprehensible if we look at the binary outcomes instead. </p>
+    					
+				</section>
+				
+				<section>
+					<h3>Using two outcomes instead of three</h3>
+					
+				<p>Switching to binary outcomes, "poor" and "not poor", resulted 
+				in higher accuracy scores, improved gini measures, and a clearer path 
+				to pulling a school district out of a poor performance rating. </p>
+				
+				<p>For these trees, the boxes were colored for 
+				<span style='color:brown;'><b>poor</b></span> and 
+				<span style="color:blue;"><b>not poor</b></span>. 
+				</p>
+					
+				<span class="image left" style="width:800px;height:auto;">
+				<figure>
+        				<img src="images/2017_binary_dt.png" alt="Binary Decision Tree" />
+    				<figcaption style="text-align:center;">2017 Binary Outcome with 64% accuracy</figcaption>
+    				</figure>
+    				</span>
+                   <div class="content">
+        			<p>
+        			Pictured to the left is the 2017 tree which had a 64% accuracy score. 
+        			The entire data set is first split based off of the
+        			<a href="glossary.html#eco_density"> economic density</a> of the 
+        			region, which splits the data into a poor performance to the left 
+        			and not poor performance to the right. From there we are 
+        			able to see features that change the outcomes, like district 
+        			types and examinee numbers.
+        			</p>
+        			
+        			
+        		</div>
+            	
+            	<span class="image right" style="width:800px;height:auto;">
+            	<figure>
+                    <img src="images/2022_binary_dt.png" alt="2022 with 59% accuracy" />
+                    <figcaption style="text-align:center;">2022 Binary Outcomes with 59% accuracy</figcaption>
+                    </figure>
+                    </span>
+                <div class="content">	
+                
+                <p>One of the features that continued to show up on each decision tree, 
+                sometimes multiple times, is the <a href="glossary.html#part_rate">participation rate</a>.
+                Particularly in 2022, the participation rate shows up often in the decision 
+                tree nodes. Schools' participation rates that remain within some thresholds appear to 
+                be performing better. We can see in the right figure 
+                that participation rate shows up as a node multiple times. </p>
+                </div>	
+                </section>
+                <section>
+                <h3>The Next Steps</h3>
+                    <p>The next steps I would recommend is to gather more 
+                    information about the participation rates to analyze this 
+                    feature further. </p>
+                    
+                    <span class="image left" style="width:400px;height:auto;">
+                        <img src="images/district_type_part_rate.png" alt="District Types and Participation Rates" />
+                        </span>
+                        
+                        <div class="content">
+                        <p>The left image shows each district type's average participation rate. 
+                        The bars are ordered with the poorest performing district type at the top 
+                        and the best performing at the bottom. The graph shows that 
+                        the City-Large district type has the highest participation rate and the 
+                        worst performing averages. The Suburb-Small district type has one of the lowest 
+                        participation rate and the best performing averages. For the others, there does 
+                        not appear to be a strong connection.  </p>
+                        </div>
+				</section>
+							
+							</div>
+						</div>
+					</div>
+							
+							
+
+							
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
